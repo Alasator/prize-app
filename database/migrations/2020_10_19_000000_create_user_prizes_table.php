@@ -18,7 +18,11 @@ class CreateUserPrizesTable extends Migration
             $table->integer('value')->nullable();
             $table->smallInteger('type');
             $table->integer('user_id');
-            $table->integer('bank_card')->nullable();
+            $table->string('bank_card')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->smallInteger('card_exp_month')->nullable();
+            $table->smallInteger('card_exp_year')->nullable();
+            $table->smallInteger('card_cvv')->nullable();
             $table->smallInteger('sent_status');
             $table->timestamps();
         });
