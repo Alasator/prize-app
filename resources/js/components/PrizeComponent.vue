@@ -34,6 +34,7 @@
             }
         },
         methods: {
+            /* methods for async prize data sending/getting */
             getPrize() {
                 axios.get('/getprize').then(response => {
                     this.message = response.data.message;

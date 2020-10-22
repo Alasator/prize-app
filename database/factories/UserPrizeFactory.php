@@ -9,7 +9,7 @@ class UserPrizeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
-     *
+     * make user_prize table rows for console command
      * @var string
      */
     protected $model = UserPrize::class;

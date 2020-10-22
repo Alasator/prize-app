@@ -22,12 +22,18 @@ class SendMoney extends Command
      */
     protected $description = 'send money to ppl';
 
+    /**
+     * limit for chunk method
+     */
     const LIMIT = 100;
 
     public function handle()
     {
         $this->info('Start');
 
+        /**
+         * test keys for example
+         */
         $public_key = 'sandbox_xxxxxxxxxxxxxx';
         $private_key = 'sandbox_xxxxxxxxxxxxxxx';
 

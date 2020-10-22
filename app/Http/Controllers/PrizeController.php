@@ -10,6 +10,10 @@ class PrizeController extends Controller
 {
 
 
+    /**
+     * get prize with random value
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function prize()
     {
 
@@ -52,6 +56,11 @@ class PrizeController extends Controller
 
     }
 
+    /**
+     * convert user money prize with coef
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function loyalty(Request $request)
     {
         $loyalty_points = round($request->value * UserPrize::COEFFICIENT);
@@ -70,6 +79,11 @@ class PrizeController extends Controller
         ]);
     }
 
+    /**
+     * return user prize
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function return(Request $request)
     {
 
