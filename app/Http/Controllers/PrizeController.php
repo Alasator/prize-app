@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\UserPrize;
 
 class PrizeController extends Controller
 {
+
 
     public function prize()
     {
@@ -53,10 +55,16 @@ class PrizeController extends Controller
     public function loyalty(Request $request)
     {
         $loyalty_points = round($request->value * UserPrize::COEFFICIENT);
+        try {
         $user = \Auth::user();
         $user->loyalty_points += $loyalty_points;
         $user->save();
         $message = 'Ваш выигрыш конвертирован в бонусные баллы, вы получили ' . $loyalty_points . ' очков лояльности';
+          }
+       catch (\Exception $e) {
+         $message =  $e->getMessage();
+       }
+
         return response()->json([
             'message' => $message
         ]);
